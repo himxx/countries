@@ -1,1 +1,63 @@
 /* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;800&display=swap');
+
+@import './variables';
+@import './responsive';
+
+body {
+    box-sizing: border-box;
+    margin: 0;
+    padding:0;
+    font-family: $font-family;
+}
+
+.light {
+    background-color: $light-main-bg;
+    color: $light-txt;
+}
+
+.dark{
+    background-color: $dark--main-bg;
+    color:  $dark--txt;
+}
+
+.container {
+    margin: auto;
+    padding: 1rem 2rem;
+    @include xl {
+        max-width: 1400px;
+    }
+}
+
+.box-shadow {
+    background-color: white;
+    box-shadow: 0px 15px 10px -15px 
+}
+
+.flex-space {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+img {
+    width: 100%;
+}
+
+.darkElement {
+    background-color: $dark-element-bg;
+    color:$dark--txt;
+    box-shadow: $dark--shadow;
+}
+
+.lightElement {
+    color: $light-txt;
+    background-color: $light-element-bg;
+    box-shadow: $light-shadow;
+}
+
+.truncate {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}

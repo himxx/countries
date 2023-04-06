@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Theme, ThemeService } from './services/theme.service';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +8,13 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'countriesApp';
+
+  theme$!:Observable<Theme>;
+  
+  constructor( private themeService:ThemeService){
+    this.theme$ = this.themeService.modeTheme$;
+  }
+
+  
+
 }

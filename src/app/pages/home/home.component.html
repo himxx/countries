@@ -1,0 +1,7 @@
+<div class="container">
+<ng-container *ngIf="countries$ | async as countries" >
+    <div  class="countries">
+        <app-country *ngFor="let country of countries" [country]="country"></app-country>
+    </div>
+</ng-container>
+</div>

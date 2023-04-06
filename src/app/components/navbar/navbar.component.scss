@@ -1,0 +1,21 @@
+
+@import '../../../variables';
+
+.switcher{
+    display: flex;
+    gap: .5rem;
+    cursor: pointer;
+    align-items: center;
+}
+
+:host-context(.light) .navbar{
+    background-color: $light-element-bg;
+    color: $light-txt;
+    box-shadow: $light-shadow;
+}
+
+:host-context(.dark) .navbar{
+    background-color: $dark-element-bg ;
+    color:   $dark--txt;
+    box-shadow:$dark--shadow ;
+}

@@ -1,0 +1,17 @@
+    <section>
+        <div *ngIf="country" class="country" [ngClass]="theme$ | async">
+            <div class="country-img">
+                <img [src]="country.flags.svg" alt="">
+            </div>
+            <div class="country-details">
+                <h2 class="country-name truncate">{{country.name.common}}</h2>
+                <div class="country-info">
+                    <p><strong>Population: {{country.population | number }}</strong></p>
+                    <p><strong>Region: {{country.region}}</strong></p>
+                    <p><strong>Capital: {{country.capital}}</strong></p>
+                </div>
+            </div>
+        </div>
+    </section>
+  
+

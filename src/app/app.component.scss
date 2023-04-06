@@ -1,0 +1,15 @@
+@import '../variables';
+
+.app {
+    min-height: 100vh;
+}
+
+.app.light {
+    background-color: $light-main-bg ;
+    color: $light-txt;
+}
+
+.app.dark {
+    background-color: $dark--main-bg;
+    color: $dark--txt;
+}
