@@ -8,6 +8,8 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { CountryComponent } from './components/country/country.component';
 import { HomeComponent } from './pages/home/home.component';
 import { InputComponent } from './components/input/input.component';
+import { FormsModule } from '@angular/forms';
+import { FilterPipe } from './filter.pipe';
 
 @NgModule({
   declarations: [
@@ -15,12 +17,14 @@ import { InputComponent } from './components/input/input.component';
     NavbarComponent,
     CountryComponent,
     HomeComponent,
-    InputComponent
+    InputComponent,
+    FilterPipe
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

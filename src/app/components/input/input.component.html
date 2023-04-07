@@ -1,6 +1,4 @@
-<div class="container">
-    <form class="search">
-        <i class="fa fa-search search-icon" aria-hidden="true"></i>
-        <input type="text">
-    </form>
-</div>
+    <div class="search">
+        <i class="fa fa-search search-icon" aria-hidden="true" ></i>
+        <input [ngClass]="theme|async" [(ngModel)]="searchText" (keyup)="onInputChange()" type="text" [placeholder]="placeholder">
+    </div>

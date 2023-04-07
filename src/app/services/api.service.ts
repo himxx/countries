@@ -15,5 +15,9 @@ export class ApiService {
   getAll():Observable<Country[]>{
     return this.http.get<Country[]>(`${this.apiUrl}/all`);
   }
+
+  getByName(name:string):Observable<Country[]> {
+    return this.http.get<Country[]>(`${this.apiUrl}/name/${name}`)
+  }
   
 }
