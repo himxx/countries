@@ -1,12 +1,13 @@
 
 @import '../../../responsive';
-@import '../../../responsive';
 
 
 .countries {
-   display: flex;
-   flex-wrap: wrap;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  display: grid;
    gap: 2rem;
+   margin-top: 4rem;
+   width: 100%;
 }
 
 .notFound {
@@ -33,3 +34,4 @@
         }
     }
 }
+

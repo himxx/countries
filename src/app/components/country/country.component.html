@@ -1,4 +1,3 @@
-    <section>
         <div [routerLink]="['/', country.name]" *ngIf="country" class="country" [ngClass]="theme$ | async">
             <div class="country-img">
                 <img [src]="country.flags.svg" alt="">
@@ -12,6 +11,5 @@
                 </div>
             </div>
         </div>
-    </section>
   
 
