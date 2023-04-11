@@ -13,6 +13,9 @@ export class HomeComponent implements OnInit{
   countries$!:Observable<Country[]>;
   searchTerm!:string;
   themeMode$!:Observable<Theme>;
+  regions:string[] = ['All regions','Africa','Europe','Americas','Asia','Oceania'];
+  selectedRegion!:string;
+
   constructor(private api:ApiService, private theme:ThemeService){}
 
   ngOnInit(): void {
@@ -22,6 +25,12 @@ export class HomeComponent implements OnInit{
 
   onInputChange(value: string) {
     this.searchTerm = value;
+    
+  }
+
+  onSelect(value:string) {
+    this.selectedRegion = value;
+    console.log(this.selectedRegion);
     
   }
 

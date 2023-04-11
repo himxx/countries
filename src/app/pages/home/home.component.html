@@ -1,11 +1,24 @@
 <div class="container">
-<app-input [theme]="themeMode$" (searchEmit)="onInputChange($event)" [placeholder]="'Search country ...'"></app-input>
-<ng-container *ngIf="countries$ | async as countries" >
-    <div  class="countries">
-        <app-country *ngFor="let country of countries | filter:searchTerm" [country]="country"></app-country>
+  <div class="filters">
+    <app-input
+      [theme]="themeMode$"
+      (searchEmit)="onInputChange($event)"
+      [placeholder]="'Search country ...'"
+    ></app-input>
+    <app-filter [theme]="themeMode$" (selectedRegionEmit)="onSelect($event)" [options]="regions"></app-filter>
+  </div>
+  <ng-container *ngIf="countries$ | async as countries">
+    <div class="countries">
+      <app-country
+        *ngFor="let country of countries | filter : searchTerm:selectedRegion"
+        [country]="country"
+      ></app-country>
     </div>
-    <div class="notFound" *ngIf="(countries | filter: searchTerm).length === 0">
-        Not found
+    <div
+      class="notFound"
+      *ngIf="(countries | filter : searchTerm:selectedRegion).length === 0"
+    >
+      Not found
     </div>
-</ng-container>
+  </ng-container>
 </div>

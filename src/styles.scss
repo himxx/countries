@@ -4,16 +4,32 @@
 @import './variables';
 @import './responsive';
 
-body {
+* {
     box-sizing: border-box;
     margin: 0;
     padding:0;
+}
+
+p {
+    padding: .5rem;
+}
+
+body {
+    
     font-family: $font-family;
 }
 
 .light {
     background-color: $light-main-bg;
     color: $light-txt;
+}
+
+h1 {
+    font-size: 1.8rem;
+}
+
+h2 {
+    font-size: 1.4rem;
 }
 
 .dark{
@@ -60,4 +76,8 @@ img {
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+}
+
+a {
+    text-decoration: none;
 }

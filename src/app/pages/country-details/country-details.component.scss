@@ -1,0 +1,65 @@
+@import '../../../responsive';
+@import '../../../variables';
+
+
+section {
+    margin-top: 3rem;
+}
+
+.details {
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+    @include xl {
+        flex-direction: row;
+    }
+
+}
+
+img {
+    height: 100%;
+    max-width: 500px;
+}
+
+.info {
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+}
+
+.borders {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    align-items: center;
+}
+
+.light {
+    background-color: $light-element-bg;
+    color: $light-txt;
+    box-shadow: 0 5px 11px 0 $light-shadow;
+  }
+
+  .dark {
+    background-color: $dark-element-bg;
+    color: $dark--txt;
+    box-shadow: 0 5px 11px 0 $dark--shadow;
+  }
+
+  .button {
+    padding: .5rem 1rem;
+    border-radius: 5px;
+  }
+
+  p {padding: .5rem 0;}
+
+  h1{
+    padding-bottom: .5rem;
+  }
+
+  .rightColumn {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-grow: 1;
+  }

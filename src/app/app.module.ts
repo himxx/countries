@@ -10,6 +10,8 @@ import { HomeComponent } from './pages/home/home.component';
 import { InputComponent } from './components/input/input.component';
 import { FormsModule } from '@angular/forms';
 import { FilterPipe } from './filter.pipe';
+import { FilterComponent } from './components/filter/filter.component';
+import { CountryDetailsComponent } from './pages/country-details/country-details.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +20,9 @@ import { FilterPipe } from './filter.pipe';
     CountryComponent,
     HomeComponent,
     InputComponent,
-    FilterPipe
+    FilterPipe,
+    FilterComponent,
+    CountryDetailsComponent
   ],
   imports: [
     BrowserModule,

@@ -1,7 +1,7 @@
     <nav class="navbar box-shadow">
         <div class="container flex-space">
             <div class="title">
-                <h1>Where is the countries ?</h1>
+                <span class="logo">Where is the countries ?</span>
             </div>
             <ng-container *ngIf="theme$ | async as theme">
                 <div *ngIf="theme === 'light'"  class="switcher" (click)="toggleMode()">

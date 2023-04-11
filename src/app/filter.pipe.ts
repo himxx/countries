@@ -6,9 +6,18 @@ import { Country } from './models/country';
 })
 export class FilterPipe implements PipeTransform {
 
-  transform(value: Country[], term:string): Country[] {
-    if(!term) return value;
-    return value.filter(country => country.name.common.toLowerCase().includes(term.toLowerCase()))
+  transform(value: Country[], term:string, region:string): Country[] {  
+    if (!term && region==='All regions') {
+    return value;
+  }
+  let filteredValue = value;
+  if (term) {
+    filteredValue = filteredValue.filter(country => country.name.toLowerCase().includes(term.toLowerCase()));
+  }
+  if (region && region !== 'All regions') {
+    filteredValue = filteredValue.filter(country => country.region.toLowerCase() === region.toLowerCase());
+  }
+  return filteredValue;
+}
   }
 
-}

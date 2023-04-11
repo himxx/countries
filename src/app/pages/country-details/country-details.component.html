@@ -1,0 +1,37 @@
+<section>
+  <div class="container">
+    <a class="button" [routerLink]="['/']" [ngClass]="theme$ | async" routerLink="/">Back</a>
+    <section>
+    <div *ngIf="country$ | async as country" class="details">
+      <div class="leftColumn">
+        <img [src]="country.flag" alt="" />
+      </div>
+      <div class="rightColumn">
+        <h1>{{country.name}}</h1>
+        <div class="info">
+          <div class="leftInfo">
+            <p><strong>Native name</strong>: {{country.nativeName}}</p>
+            <p><strong>Population</strong>: {{country.population | number}}</p>
+            <p><strong>Region</strong>: {{country.region}}</p>
+            <p><strong>Subregion</strong>: {{country.subregion}}</p>
+            <p><strong>Capital</strong>: {{country.capital}}</p>
+          </div>
+          <div class="rightInfo">
+            <p><strong>Currencies</strong>: {{country?.currencyNames}}</p>
+            <p><strong>Languages</strong>: {{country?.languageNames}}</p>
+          </div>
+        </div>
+        <div class="borders" *ngIf="borders$ | async as borders; else noborders">
+          <p><strong>Border countries: </strong></p>
+          <a class="button" [routerLink]="['/', border.name]" [ngClass]="theme$ | async" *ngFor="let border of borders">
+            {{border.name}}
+          </a>
+        </div>
+        <ng-template #noborders>
+          <p><strong>Border coountries: </strong>no borders countries</p>
+        </ng-template>
+      </div>
+    </div>
+  </section>
+
+  </div>

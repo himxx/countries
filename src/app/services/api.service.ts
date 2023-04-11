@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, map } from 'rxjs';
 import { Country } from '../models/country';
 import { HttpClient } from '@angular/common/http';
 
@@ -8,7 +8,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class ApiService {
 
-  apiUrl = "https://restcountries.com/v3.1"
+  apiUrl = "https://restcountries.com/v2"
 
   constructor(private http:HttpClient) { }
 
@@ -16,8 +16,11 @@ export class ApiService {
     return this.http.get<Country[]>(`${this.apiUrl}/all`);
   }
 
-  getByName(name:string):Observable<Country[]> {
-    return this.http.get<Country[]>(`${this.apiUrl}/name/${name}`)
+  getCountryByName(name:string):Observable<Country> {
+    return this.http.get<Country[]>(`${this.apiUrl}/name/${name}`).pipe(map(res=>res[0]))
   }
-  
+
+getCountryByCodes(codes:string[]) {
+  return this.http.get<Country[]>(`${this.apiUrl}/alpha?codes=${codes.join(',')}`)
+}  
 }

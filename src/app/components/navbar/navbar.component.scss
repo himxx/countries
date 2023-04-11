@@ -8,6 +8,10 @@
     align-items: center;
 }
 
+.logo {
+    font-size: 1.4rem;
+}
+
 :host-context(.light) .navbar{
     background-color: $light-element-bg;
     color: $light-txt;
